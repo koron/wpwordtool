@@ -1,0 +1,11 @@
+github.com/koron-go/janorm v0.0.0-20190605042817-09e318568350 h1:WYFNvbWBMkZ3gapkIw99E8gO12/BjRCWLJDt9hIsnbM=
+github.com/koron-go/janorm v0.0.0-20190605042817-09e318568350/go.mod h1:C1zDBpzJq2TCicv3qVlFYZnjVE/QyNF5ALjcgK2PBu4=
+github.com/koron-go/trietree v0.0.0-20190522050059-ff324f271b79 h1:TCeThWs23wBUkBBkH2Tn7YdoAMAy673ziy7kYh0DeGE=
+github.com/koron-go/trietree v0.0.0-20190522050059-ff324f271b79/go.mod h1:0gbppPdY5XG3tMHeYWFn6YG3lhZcGlClOe6hMOMm97M=
+github.com/koron/go-subcmd v1.0.0 h1:AVCdeWSfY9LaiuVHAumEKV3OYIIKG7pHw/+vvxhlJdk=
+github.com/koron/go-subcmd v1.0.0/go.mod h1:D+hefRR744UrPtYBpn9xhuXNdJK4NliVntPEPTZajjA=
+golang.org/x/text v0.3.2 h1:tW2bmiBqwgJj/UpqtC8EpXEZVYOwU0yG4iWbprSVAcs=
+golang.org/x/text v0.3.2/go.mod h1:bEr9sfX3Q8Zfm5fL9x+3itogRgK3+ptLWKqgva+5dAk=
+golang.org/x/tools v0.0.0-20180917221912-90fa682c2a6e/go.mod h1:n7NCudcB/nEzxVGmLbDWY5pfWTLqBcC2KZ6jyYvM4mQ=
+golang.org/x/xerrors v0.0.0-20190513163551-3ee3066db522 h1:bhOzK9QyoD0ogCnFro1m2mz41+Ib0oOhfJnBp5MR4K4=
+golang.org/x/xerrors v0.0.0-20190513163551-3ee3066db522/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
