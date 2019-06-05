@@ -6,6 +6,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"regexp"
 
 	"github.com/koron-go/janorm"
 	"github.com/koron-go/trietree"
@@ -99,9 +100,15 @@ func (c *Converter) Save(basename string) error {
 	return nil
 }
 
-func wordFilter(s string) bool {
+func jaFilter(s string) bool {
 	rs := []rune(s)
 	return len(rs) >= 2
+}
+
+var rxEn = regexp.MustCompile(`^[A-Za-z][A-Za-z]+$`)
+
+func enFilter(s string) bool {
+	return rxEn.MatchString(s)
 }
 
 // Convert converts wikipedia's word files to static trietree file.
@@ -109,16 +116,16 @@ func Convert(inJa, inEn string, out string) error {
 	c := NewConverter()
 
 	log.Printf("loading jawiki: %s", inJa)
-	err := c.Load(inJa, wordFilter)
+	err := c.Load(inJa, jaFilter)
 	if err != nil {
 		return err
 	}
 
-	//log.Printf("loading enwiki: %s", inEn)
-	//err = c.Load(inEn, nil)
-	//if err != nil {
-	//	return err
-	//}
+	log.Printf("loading enwiki: %s", inEn)
+	err = c.Load(inEn, enFilter)
+	if err != nil {
+		return err
+	}
 
 	log.Printf("writing")
 	err = c.Save(out)
