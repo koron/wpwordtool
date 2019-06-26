@@ -137,14 +137,18 @@ func Convert(inJa, inEn string, out string) error {
 }
 
 func runConvert(fs *flag.FlagSet, args []string) error {
+	var inJa, inEn, outBase string
+	fs.StringVar(&inJa, "ja", "jawiki-latest-all-titles-in-ns0.gz",
+		"Japanese wikipedia all-titles-in-ns0")
+	fs.StringVar(&inEn, "en", "enwiki-latest-all-titles-in-ns0.gz",
+		"English wikipedia all-titles-in-ns0")
+	fs.StringVar(&outBase, "out", defaultSTreeFile,
+		"basename for output files")
 	err := fs.Parse(args)
 	if err != nil {
 		return err
 	}
-	err = Convert(
-		"tmp/jawiki-20190520-all-titles-in-ns0.gz",
-		"tmp/enwiki-20190520-all-titles-in-ns0.gz",
-		defaultSTreeFile)
+	err = Convert(inJa, inEn, outBase)
 	if err != nil {
 		return err
 	}
