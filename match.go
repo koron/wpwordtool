@@ -97,10 +97,13 @@ func (m *Matcher) MatchFile(fname string) error {
 			return err
 		}
 		s := string(b)
-		fmt.Print(s)
+		fmt.Println("#", s)
 		s = janorm.Normalize(s)
-		for _, w := range m.MatchAll(s) {
-			fmt.Print("\t", w)
+		for i, w := range m.MatchAll(s) {
+			if i != 0 {
+				fmt.Print("\t")
+			}
+			fmt.Print(w)
 		}
 		fmt.Print("\n")
 	}
