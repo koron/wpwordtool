@@ -33,7 +33,7 @@ func (c *Converter) Load(name string, filter stringFilter) error {
 	defer r.Close()
 
 	for {
-		s, err := r.ReadTitle()
+		s, _, err := r.ReadTitle()
 		if err != nil {
 			if err == io.EOF {
 				break

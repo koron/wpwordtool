@@ -5,6 +5,7 @@ import (
 	"compress/gzip"
 	"io"
 	"os"
+	"strings"
 )
 
 // Reader is title reader of wikipedia's title in ns0.
@@ -52,16 +53,30 @@ func (r *Reader) readLine() (string, error) {
 }
 
 // ReadTitle read a title.
-func (r *Reader) ReadTitle() (string, error) {
+func (r *Reader) ReadTitle() (string, *string, error) {
 	for {
 		s, err := r.readLine()
 		if err != nil {
-			return "", err
+			return "", nil, err
 		}
-		if s == "" {
+		s = strings.ReplaceAll(s, "_", " ")
+		t, st := r.split(s)
+		if t == "" {
 			continue
 		}
 		// FIXME: decode or filter titles.
+		return t, st, nil
+	}
+}
+
+func (r *Reader) split(s string) (title string, subtitle *string) {
+	if !strings.HasSuffix(s, ")") {
 		return s, nil
 	}
+	n := strings.LastIndex(s, " (")
+	if n < 0 {
+		return s, nil
+	}
+	t1, t2 := s[:n], s[n+2:len(s)-1]
+	return t1, &t2
 }
