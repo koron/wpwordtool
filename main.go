@@ -12,8 +12,9 @@ const (
 )
 
 var cmds = subcmd.Subcmds{
-	"convert": subcmd.Main2(runConvert),
-	"match":   subcmd.Main2(runMatch),
+	"convert":  subcmd.Main2(runConvert),
+	"match":    subcmd.Main2(runMatch),
+	"abstract": subcmd.Main2(runAbstract),
 }
 
 func main() {
