@@ -31,8 +31,7 @@ Basename of output files is `tmp/wikiwords` which is default of `-out`.
 ### Abstract sub command
 
 Extract all abstracts from wikipedia's article XML files.
-
-`jawiki-YYYYMMDD-abstractX.xml.gz`.
+The pattern of names is `jawiki-YYYYMMDD-abstractX.xml.gz`.
 
 How to use:
 
