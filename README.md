@@ -1,6 +1,10 @@
 # Wikipedia Word Tool
 
-Wikipedia の記事見出しを java-ugmatcha-suite で取り扱える形式に変換するツール。
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/koron/wpwordtool)](https://pkg.go.dev/github.com/koron/wpwordtool)
+[![Actions/Go](https://github.com/koron/wpwordtool/workflows/Go/badge.svg)](https://github.com/koron/wpwordtool/actions?query=workflow%3AGo)
+[![Go Report Card](https://goreportcard.com/badge/github.com/koron/wpwordtool)](https://goreportcard.com/report/github.com/koron/wpwordtool)
+
+Wikipedia の記事見出しを [java-ugmatcha-suite](https://github.com/koron/java-ugmatcha-suite) で取り扱える形式に変換するツール。
 
 詳細は
 <https://github.com/koron/java-ugmatcha-suite/blob/master/doc/algorithm.md>
@@ -14,7 +18,7 @@ Wikipedia の記事見出しを java-ugmatcha-suite で取り扱える形式に�
 
 
 ```console
-$ GO111MODULE=on go get -u -i github.com/koron/wpwordtool
+$ go install github.com/koron/wpwordtool@latest
 ```
 
 ### Convert sub command
